@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node dependencies
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor / OS directories
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# PHP / Backend temporary files & cache
+api/storage/cache/*
+!api/storage/cache/.gitkeep
+api/storage/database/*.sqlite
+api/storage/database/*.sqlite-journal
+api/storage/database/*.json
+*.sqlite
+*.sqlite3
+
+# Composer / Vendor (if added)
+vendor/
+composer.lock
