@@ -1,4 +1,5 @@
 import React from "react";
+import { Sparkles, ShieldCheck } from "lucide-react";
 import SchoolSeal from "../atoms/SchoolSeal";
 import Badge from "../atoms/Badge";
 
@@ -41,40 +42,65 @@ export default function PageHero({
       {/* Decorative Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+      {/* Half-Visible Background Blurred Official School Seal (Watermark Ambient Accent) */}
+      <div className="absolute -bottom-24 sm:-bottom-32 md:-bottom-44 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0 opacity-20 sm:opacity-25 blur-[1.5px] scale-110 sm:scale-125 transition-all">
+        <SchoolSeal
+          size="xl"
+          showWreath={true}
+          schoolName={fullName}
+          founded={founded}
+          className="w-72 h-72 sm:w-96 sm:h-96 md:w-[440px] md:h-[440px] drop-shadow-2xl"
+        />
+        <div className="absolute inset-0 bg-radial from-transparent via-[#0a2316]/30 to-[#0a2316]/90" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 z-10">
         {variant === "home" ? (
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14">
             {/* Left Column: Institutional Welcome */}
             <div className="flex-1 text-center lg:text-left max-w-2xl">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <Badge variant="solidGold">EST. {founded} • EXCELLENCE IN EDUCATION</Badge>
-                <Badge variant="glass">DepEd School ID: {schoolId}</Badge>
+              {/* Sleek Dual Status Pills */}
+              <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/35 text-amber-300 text-[11px] sm:text-xs font-bold tracking-wider uppercase backdrop-blur-md shadow-xs">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Est. {founded} • Excellence in Education</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-emerald-100 text-[11px] sm:text-xs font-mono font-medium backdrop-blur-md shadow-xs">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-300 shrink-0" />
+                  <span>DepEd School ID: <strong className="text-white font-bold">{schoolId}</strong></span>
+                </span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-white">
+              {/* Dignified Institutional Heading */}
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.14] text-white font-serif drop-shadow-sm">
                 {primaryNamePart ? `${primaryNamePart} ` : ""}
-                <span className="text-gold-gradient block sm:inline">
+                <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent block sm:inline">
                   {goldNamePart}
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl font-semibold text-amber-300 mt-3 tracking-tight">
+              {/* Classical Motto Accent */}
+              <p className="text-base sm:text-xl font-serif italic text-amber-200/95 mt-3.5 tracking-tight font-medium">
                 &ldquo;{tagline}&rdquo;
               </p>
 
-              <p className="text-emerald-100/90 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed">
-                {description}
-              </p>
+              {/* Sub-description with Refined Line Height */}
+              {description && (
+                <p className="text-emerald-100/85 text-xs sm:text-sm lg:text-base mt-3 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                  {description}
+                </p>
+              )}
 
+              {/* Call-to-Action Group */}
               {actions && (
-                <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+                <div className="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 w-full sm:w-auto">
                   {actions}
                 </div>
               )}
             </div>
 
-            {/* Right Column: Prominent Official Seal with Laurel Wreath */}
-            <div className="shrink-0 flex flex-col items-center">
+            {/* Right Column: Prominent Official Seal with Laurel Wreath (Desktop Only, since mobile has the ambient blurred half-seal watermark in the background) */}
+            <div className="hidden lg:flex shrink-0 flex-col items-center">
               <div className="relative p-5 sm:p-7 rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-2xl">
                 <div className="absolute inset-0 rounded-full border-2 border-amber-400/30 animate-pulse" />
                 <SchoolSeal
