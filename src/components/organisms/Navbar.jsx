@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, X, Search, ShieldCheck, MapPin, Phone, ArrowUpRight, Lock } from "lucide-react";
 import SchoolSeal from "../atoms/SchoolSeal";
 import SearchInput from "../atoms/SearchInput";
@@ -6,7 +6,7 @@ import { schoolInfo as defaultSchoolInfo, navigationLinks } from "../../data/moc
 
 /**
  * Reusable Navbar Organism
- * Clean, single-line desktop header layout with no text wrapping or cluttered badges.
+ * Clean, single-line desktop header layout with auto hide-on-scroll-down, show-on-scroll-up.
  */
 export default function Navbar({
   activeTab,
@@ -19,6 +19,33 @@ export default function Navbar({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  // Auto hide on scroll down, show on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Always show at the top of the page
+      if (currentScrollY < 40) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current + 8) {
+        // Scrolling down -> hide navbar (unless mobile menu or search is open)
+        if (!mobileMenuOpen && !searchOpen) {
+          setIsVisible(false);
+        }
+      } else if (currentScrollY < lastScrollY.current - 8) {
+        // Scrolling up -> show navbar
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileMenuOpen, searchOpen]);
 
   const handleNavClick = (tabId) => {
     onSelectTab(tabId);
@@ -36,34 +63,41 @@ export default function Navbar({
       .toUpperCase();
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      {/* Top DepEd Institutional Ribbon */}
-      <div className="bg-[#0a2316] text-emerald-100/90 text-xs border-b border-emerald-900/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
-          <div className="flex items-center gap-3 overflow-hidden">
-            <span className="inline-flex items-center gap-1.5 font-semibold text-amber-400 truncate">
-              <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
-              <span className="truncate">Republic of the Philippines • {schoolInfo.region}</span>
+    <header className="fixed top-0 left-0 right-0 z-50 w-full">
+      {/* Top DepEd Institutional Ribbon - Hides on scroll down, shows on scroll up */}
+      <div
+        className={`bg-[#0a2316] text-emerald-100/90 text-[11px] sm:text-xs border-b border-emerald-900/60 overflow-hidden transition-all duration-300 ease-in-out ${
+          isVisible ? "max-h-40 sm:max-h-12 opacity-100 py-1.5 sm:py-0" : "max-h-0 opacity-0 py-0 border-transparent pointer-events-none"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:h-9 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4">
+          {/* Official DepEd Header & Division Information */}
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-3 text-emerald-200/90">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-amber-400">
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-amber-400" />
+              <span>Republic of the Philippines • {schoolInfo.region}</span>
             </span>
-            <span className="hidden md:inline text-emerald-700">|</span>
-            <span className="hidden md:inline truncate text-emerald-200/80">
-              {schoolInfo.division} • School ID: {schoolInfo.schoolId}
+            <span className="text-emerald-700">|</span>
+            <span>
+              {schoolInfo.division} • School ID: <strong className="text-white font-mono">{schoolInfo.schoolId}</strong>
             </span>
           </div>
-          <div className="hidden sm:flex items-center gap-5 text-[11px] shrink-0">
-            <span className="inline-flex items-center gap-1.5 text-emerald-200/90">
-              <MapPin className="w-3 h-3 text-amber-400" />
-              {schoolInfo.location}
+
+          {/* Location & Contact Info */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-emerald-200/90 pt-0.5 sm:pt-0 border-t border-emerald-900/40 sm:border-t-0">
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
+              <span>{schoolInfo.location}</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 text-emerald-200/90 font-semibold">
-              <Phone className="w-3 h-3 text-amber-400" />
-              {schoolInfo.contactNumber}
+            <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-100">
+              <Phone className="w-3 h-3 text-amber-400 shrink-0" />
+              <span>{schoolInfo.contactNumber}</span>
             </span>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
+      {/* Main Navigation Bar - Always visible and accessible */}
       <div className="bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
           {/* Left: Brand Logo + Acronym on Mobile / Full Name on Desktop */}
@@ -87,8 +121,10 @@ export default function Navbar({
               <span className="hidden md:inline text-lg lg:text-xl font-extrabold text-slate-900 font-serif tracking-tight group-hover:text-[#1B4332] transition-colors whitespace-nowrap">
                 {schoolInfo.name}
               </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-emerald-800/80 whitespace-nowrap truncate">
-                Est. {schoolInfo.founded} • Official School Portal
+              {/* Subtitle: Short on mobile to prevent ellipsis cut-off ("SCHO..."), full on desktop */}
+              <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-emerald-800/80 whitespace-nowrap">
+                <span className="sm:hidden">Est. {schoolInfo.founded} • Official Portal</span>
+                <span className="hidden sm:inline">Est. {schoolInfo.founded} • Official School Portal</span>
               </span>
             </div>
           </button>
