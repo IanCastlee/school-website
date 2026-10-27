@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Menu, X, Search, ShieldCheck, MapPin, Phone, ArrowUpRight, Lock } from "lucide-react";
+import { Menu, X, Search, ShieldCheck, MapPin, Phone, ArrowUpRight, Lock, ChevronDown } from "lucide-react";
 import SchoolSeal from "../atoms/SchoolSeal";
 import SearchInput from "../atoms/SearchInput";
 import { schoolInfo as defaultSchoolInfo, navigationLinks } from "../../data/mockData";
@@ -19,6 +19,7 @@ export default function Navbar({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [topRibbonExpanded, setTopRibbonExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
 
@@ -64,36 +65,85 @@ export default function Navbar({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      {/* Top DepEd Institutional Ribbon - Hides on scroll down, shows on scroll up */}
+      {/* Top DepEd Institutional Ribbon */}
       <div
-        className={`bg-[#0a2316] text-emerald-100/90 text-[11px] sm:text-xs border-b border-emerald-900/60 overflow-hidden transition-all duration-300 ease-in-out ${
-          isVisible ? "max-h-40 sm:max-h-12 opacity-100 py-1.5 sm:py-0" : "max-h-0 opacity-0 py-0 border-transparent pointer-events-none"
+        className={`bg-[#0a2316] text-emerald-100/90 text-[11px] sm:text-xs border-b border-emerald-900/60 overflow-hidden transition-all duration-300 ease-in-out lg:max-h-12 lg:opacity-100 lg:py-0 lg:pointer-events-auto ${
+          isVisible
+            ? topRibbonExpanded
+              ? "max-h-52 opacity-100 py-2 sm:py-0"
+              : "max-h-12 opacity-100 py-1.5 sm:py-0"
+            : "max-h-0 opacity-0 py-0 border-transparent pointer-events-none"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:h-9 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4">
-          {/* Official DepEd Header & Division Information */}
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-3 text-emerald-200/90">
-            <span className="inline-flex items-center gap-1.5 font-semibold text-amber-400">
-              <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-amber-400" />
-              <span>Republic of the Philippines • {schoolInfo.region}</span>
-            </span>
-            <span className="text-emerald-700">|</span>
-            <span>
-              {schoolInfo.division} • School ID: <strong className="text-white font-mono">{schoolInfo.schoolId}</strong>
-            </span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Main Top Bar Row - Flex justify-between to keep left and right separated */}
+          <div className="h-7 sm:h-9 flex items-center justify-between gap-3 w-full">
+            {/* Left: Republic of the Philippines Header */}
+            <div className="flex items-center gap-1.5 sm:gap-3 text-emerald-200/90 min-w-0 flex-1">
+              <span className="inline-flex items-center gap-1.5 font-semibold text-amber-400 min-w-0 truncate">
+                <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-amber-400" />
+                <span className="truncate">
+                  <span className="sm:hidden">Republic of the Philippines</span>
+                  <span className="hidden sm:inline">Republic of the Philippines • {schoolInfo.region}</span>
+                </span>
+              </span>
+              <span className="hidden sm:inline text-emerald-700 shrink-0">|</span>
+              <span className="hidden sm:inline truncate text-emerald-200/90">
+                {schoolInfo.division} • School ID: <strong className="text-white font-mono">{schoolInfo.schoolId}</strong>
+              </span>
+            </div>
+
+            {/* Right on Desktop: Location & Contact */}
+            <div className="hidden sm:flex items-center gap-x-4 text-[11px] text-emerald-200/90 shrink-0 ml-auto">
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
+                <span>{schoolInfo.location}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-100">
+                <Phone className="w-3 h-3 text-amber-400 shrink-0" />
+                <span>{schoolInfo.contactNumber}</span>
+              </span>
+            </div>
+
+            {/* Mobile Dropdown Arrow Button to Expand All Info (Positioned on far right) */}
+            <button
+              type="button"
+              onClick={() => setTopRibbonExpanded((prev) => !prev)}
+              aria-label="Toggle institutional information"
+              className="sm:hidden inline-flex items-center justify-center p-1 rounded-md text-amber-400 hover:text-white bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-800/60 transition-colors shrink-0 cursor-pointer ml-auto"
+            >
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  topRibbonExpanded ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
           </div>
 
-          {/* Location & Contact Info */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-emerald-200/90 pt-0.5 sm:pt-0 border-t border-emerald-900/40 sm:border-t-0">
-            <span className="inline-flex items-center gap-1.5">
-              <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
-              <span>{schoolInfo.location}</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-100">
-              <Phone className="w-3 h-3 text-amber-400 shrink-0" />
-              <span>{schoolInfo.contactNumber}</span>
-            </span>
-          </div>
+          {/* Mobile Expanded Drawer: Division Office, School ID, Location, Hotline */}
+          {topRibbonExpanded && (
+            <div className="sm:hidden pt-2 pb-1.5 border-t border-emerald-900/60 mt-1 space-y-1.5 text-[11px] text-emerald-200/90 animate-in fade-in slide-in-from-top-1 duration-200">
+              <div className="flex items-center justify-between gap-2 text-amber-300 font-medium">
+                <span className="truncate">{schoolInfo.region}</span>
+                <span className="font-mono font-bold text-white bg-emerald-900/90 px-2 py-0.5 rounded text-[10px] shrink-0 border border-emerald-700/60">
+                  ID: {schoolInfo.schoolId}
+                </span>
+              </div>
+              <div className="text-emerald-200/90">
+                <span>{schoolInfo.division}</span>
+              </div>
+              <div className="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+                <div className="flex items-center gap-1.5 min-w-0 truncate">
+                  <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
+                  <span className="truncate">{schoolInfo.location}</span>
+                </div>
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <Phone className="w-3 h-3 text-amber-400 shrink-0" />
+                  <span className="font-semibold text-white">{schoolInfo.contactNumber}</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
