@@ -42,8 +42,8 @@ export default function PageHero({
       {/* Decorative Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Half-Visible Background Blurred Official School Seal (Watermark Ambient Accent) */}
-      <div className="absolute -bottom-24 sm:-bottom-32 md:-bottom-44 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0 opacity-20 sm:opacity-25 blur-[1.5px] scale-110 sm:scale-125 transition-all">
+      {/* Half-Visible Background Blurred Official School Seal (Anchored on Left Side Bottom) */}
+      <div className="absolute -left-16 sm:-left-24 md:-left-32 -bottom-16 sm:-bottom-24 md:-bottom-32 pointer-events-none select-none z-0 opacity-25 sm:opacity-20 blur-[1.5px] scale-105 sm:scale-115 transition-all">
         <SchoolSeal
           size="xl"
           showWreath={true}
@@ -51,7 +51,7 @@ export default function PageHero({
           founded={founded}
           className="w-72 h-72 sm:w-96 sm:h-96 md:w-[440px] md:h-[440px] drop-shadow-2xl"
         />
-        <div className="absolute inset-0 bg-radial from-transparent via-[#0a2316]/30 to-[#0a2316]/90" />
+        <div className="absolute inset-0 bg-radial from-transparent via-[#0a2316]/20 to-[#0a2316]/80" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 z-10">
