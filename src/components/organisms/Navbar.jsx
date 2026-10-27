@@ -67,13 +67,30 @@ export default function Navbar({
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
       {/* Top DepEd Institutional Ribbon */}
       <div
-        className={`bg-[#0a2316] text-emerald-100/90 text-[11px] sm:text-xs border-b border-emerald-900/60 overflow-hidden transition-all duration-300 ease-in-out lg:max-h-12 lg:opacity-100 lg:py-0 lg:pointer-events-auto ${
+        className={`bg-[#0a2316] text-emerald-100/90 text-[11px] sm:text-xs overflow-hidden transition-all duration-300 ease-in-out lg:max-h-12 lg:opacity-100 lg:py-0 lg:border-b lg:border-emerald-900/60 lg:pointer-events-auto ${
           isVisible
             ? topRibbonExpanded
-              ? "max-h-52 opacity-100 py-2 sm:py-0"
-              : "max-h-12 opacity-100 py-1.5 sm:py-0"
-            : "max-h-0 opacity-0 py-0 border-transparent pointer-events-none"
+              ? "max-h-52 opacity-100 py-2 sm:py-0 border-b border-emerald-900/60"
+              : "max-h-12 opacity-100 py-1.5 sm:py-0 border-b border-emerald-900/60"
+            : "max-h-0 h-0 opacity-0 py-0 border-0 border-none m-0 pointer-events-none"
         }`}
+        style={
+          !isVisible
+            ? {
+                height: 0,
+                minHeight: 0,
+                maxHeight: 0,
+                border: "none",
+                borderWidth: 0,
+                borderBottomWidth: 0,
+                padding: 0,
+                margin: 0,
+                overflow: "hidden",
+                lineHeight: 0,
+                fontSize: 0,
+              }
+            : undefined
+        }
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Top Bar Row - Flex justify-between to keep left and right separated */}
