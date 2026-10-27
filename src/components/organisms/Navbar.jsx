@@ -21,11 +21,33 @@ export default function Navbar({
   const [searchOpen, setSearchOpen] = useState(false);
   const [topRibbonExpanded, setTopRibbonExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 1024 : false
+  );
   const lastScrollY = useRef(0);
 
-  // Auto hide on scroll down, show on scroll up
+  // Sync isDesktop on resize
+  useEffect(() => {
+    const handleResize = () => {
+      const desktop = window.innerWidth >= 1024;
+      setIsDesktop(desktop);
+      if (desktop) {
+        setIsVisible(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Auto hide on scroll down, show on scroll up (MOBILE ONLY: width < 1024px)
   useEffect(() => {
     const handleScroll = () => {
+      // NEVER hide on desktop screens (>= 1024px)
+      if (window.innerWidth >= 1024) {
+        setIsVisible(true);
+        return;
+      }
+
       const currentScrollY = window.scrollY;
 
       // Always show at the top of the page
@@ -65,17 +87,17 @@ export default function Navbar({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      {/* Top DepEd Institutional Ribbon */}
+      {/* Top DepEd Institutional Ribbon (Always visible on desktop >= 1024px; auto hides on mobile on scroll down) */}
       <div
-        className={`bg-[#0a2316] text-emerald-100/90 text-[11px] sm:text-xs overflow-hidden transition-all duration-300 ease-in-out lg:max-h-12 lg:opacity-100 lg:py-0 lg:border-b lg:border-emerald-900/60 lg:pointer-events-auto ${
-          isVisible
+        className={`bg-[#0a2316] text-emerald-100/90 text-[11px] sm:text-xs overflow-hidden transition-all duration-300 ease-in-out lg:!max-h-12 lg:!h-9 lg:!opacity-100 lg:!py-0 lg:border-b lg:border-emerald-900/60 lg:!pointer-events-auto ${
+          isDesktop || isVisible
             ? topRibbonExpanded
               ? "max-h-52 opacity-100 py-2 sm:py-0 border-b border-emerald-900/60"
               : "max-h-12 opacity-100 py-1.5 sm:py-0 border-b border-emerald-900/60"
             : "max-h-0 h-0 opacity-0 py-0 border-0 border-none m-0 pointer-events-none"
         }`}
         style={
-          !isVisible
+          !isDesktop && !isVisible
             ? {
                 height: 0,
                 minHeight: 0,

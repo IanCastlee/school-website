@@ -28,7 +28,7 @@ export default function MainLayout({
         onSelectSearchResult={onSelectSearchResult}
         schoolInfo={schoolInfo}
       />
-      <main className="flex-1 pt-24 sm:pt-28 lg:pt-32">{children}</main>
+      <main className="flex-1 pt-[104px] sm:pt-[116px] lg:pt-[116px]">{children}</main>
       <Footer activeTab={activeTab} onSelectTab={onSelectTab} schoolInfo={schoolInfo} />
     </div>
   );
