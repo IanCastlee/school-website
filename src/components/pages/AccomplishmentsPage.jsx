@@ -34,7 +34,7 @@ export default function AccomplishmentsPage({
       />
 
       {/* Exact Introductory Narrative from Screenshot 2 with Watermark Seal */}
-      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <section className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 py-14 sm:py-18">
         <div className="relative bg-white rounded-none p-8 sm:p-12 border border-slate-200/90 shadow-md overflow-hidden">
           {/* Subtle Watermark Seal in center-right like Screenshot 2 */}
           <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-[0.06] pointer-events-none">
@@ -108,7 +108,7 @@ export default function AccomplishmentsPage({
       </section>
 
       {/* Interactive Filter & Achievement Cards */}
-      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <section className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 pb-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <SectionHeading
             eyebrow="HALL OF HONOR"

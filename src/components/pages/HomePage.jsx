@@ -64,7 +64,7 @@ export default function HomePage({
       />
 
       {/* Quick Institutional Metrics Strip */}
-      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
+      <section className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 -mt-10 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {quickStats.map((stat) => (
             <StatCard key={stat.id} {...stat} />
@@ -73,7 +73,7 @@ export default function HomePage({
       </section>
 
       {/* Welcome to Bulusan National High School — Exact Text from Screenshot 1 in Editorial Layout */}
-      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <section className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 py-16 sm:py-24">
         <div className="bg-white rounded-none border border-slate-200/90 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           {/* Left Editorial Content (7 cols) */}
           <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
@@ -182,7 +182,7 @@ export default function HomePage({
 
       {/* Academic Programs & Curricular Offerings */}
       <section className="bg-emerald-950/5 border-y border-emerald-900/10 py-16 sm:py-20">
-        <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
           <SectionHeading
             eyebrow="K TO 12 CURRICULUM"
             title="Academic Offerings &"
@@ -230,7 +230,7 @@ export default function HomePage({
       </section>
 
       {/* Spotlight Preview: Bleeding Green Accomplishments & Chemi-Calc Reforestation */}
-      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 py-16 sm:py-20">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <SectionHeading
             eyebrow="SCHOLARS BLEEDING GREEN"

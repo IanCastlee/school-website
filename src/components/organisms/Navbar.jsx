@@ -114,7 +114,7 @@ export default function Navbar({
             : undefined
         }
       >
-        <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
           {/* Main Top Bar Row - Flex justify-between to keep left and right separated */}
           <div className="h-7 sm:h-9 flex items-center justify-between gap-3 w-full">
             {/* Left: Republic of the Philippines Header */}
@@ -188,7 +188,7 @@ export default function Navbar({
 
       {/* Main Navigation Bar - Always visible and accessible */}
       <div className="bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
-        <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 h-18 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
           {/* Left: Brand Logo + Acronym on Mobile / Full Name on Desktop */}
           <button
             type="button"
@@ -281,7 +281,7 @@ export default function Navbar({
 
         {/* Expandable Global Search Bar */}
         {searchOpen && (
-          <div className="border-t border-slate-200/80 bg-slate-50/95 py-3.5 px-4 sm:px-6 lg:px-8">
+          <div className="border-t border-slate-200/80 bg-slate-50/95 py-3.5 px-6 sm:px-8 lg:px-10 xl:px-12">
             <div className="max-w-3xl mx-auto">
               <SearchInput
                 value={searchQuery}

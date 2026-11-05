@@ -54,7 +54,7 @@ export default function PageHero({
         <div className="absolute inset-0 bg-radial from-transparent via-[#0a2316]/20 to-[#0a2316]/80" />
       </div>
 
-      <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 z-10">
+      <div className="relative max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 py-12 sm:py-20 lg:py-24 z-10">
         {variant === "home" ? (
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14">
             {/* Left Column: Institutional Welcome */}

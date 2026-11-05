@@ -84,7 +84,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
       />
 
       {/* Official BNHS Contact Plaques (Upgraded from Screenshot 5's Seal + Banner Cards) */}
-      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <section className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 py-14 sm:py-20">
         <SectionHeading
           eyebrow="DIRECT DIRECTORY"
           title="Official School Contact"
@@ -106,7 +106,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
       </section>
 
       {/* Interactive Inquiry Form & Campus Location */}
-      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <section className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 pb-20">
         <div className="bg-white rounded-none border border-slate-200/90 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           {/* Left Column: Online Inquiry & Feedback Form (7 cols) */}
           <div className="lg:col-span-7 p-8 sm:p-12">
