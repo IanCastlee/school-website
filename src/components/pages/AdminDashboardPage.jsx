@@ -976,7 +976,7 @@ export default function AdminDashboardPage({
           )}
 
           {/* MAIN BODY */}
-          <div className="p-6 sm:p-8 space-y-6 max-w-7xl w-full mx-auto">
+          <div className="p-6 sm:p-8 space-y-6 max-w-[1720px] w-full mx-auto">
           {/* ================================================================
               SECTION 1: EXECUTIVE OVERVIEW
              ================================================================ */}

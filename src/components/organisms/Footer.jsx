@@ -43,7 +43,7 @@ export default function Footer({ activeTab, onSelectTab, schoolInfo = defaultSch
 
       {/* Upper Call-to-Action Strip */}
       <div className="border-b border-emerald-900/80 bg-[#0c2619]/90">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4 text-center md:text-left flex-col sm:flex-row">
             <SchoolSeal
               size="md"
@@ -84,7 +84,7 @@ export default function Footer({ activeTab, onSelectTab, schoolInfo = defaultSch
       </div>
 
       {/* Main 4-Column Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Column 1: Institutional Profile (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
@@ -240,7 +240,7 @@ export default function Footer({ activeTab, onSelectTab, schoolInfo = defaultSch
 
       {/* Bottom Legal & Republic of the Philippines Bar */}
       <div className="border-t border-emerald-900/90 bg-[#05120b]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70">
+        <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
             <span>
               © {new Date().getFullYear()} <strong className="text-white">{schoolInfo.name}</strong>. All Rights Reserved.

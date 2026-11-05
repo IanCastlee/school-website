@@ -16,7 +16,7 @@ export default function SectionHeading({
 }) {
   const alignmentClasses =
     align === "center"
-      ? "text-center items-center mx-auto max-w-3xl"
+      ? "text-center items-center mx-auto max-w-4xl"
       : "text-left items-start";
 
   return (
@@ -31,7 +31,7 @@ export default function SectionHeading({
         )}
       </h2>
       {description && (
-        <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
           {description}
         </p>
       )}

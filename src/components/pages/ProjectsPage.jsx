@@ -46,7 +46,7 @@ export default function ProjectsPage({
       />
 
       {/* Spotlight Feature: March 1, 2025 Chemi-Calc Club Tree Planting (Screenshot 3) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <div className="bg-white rounded-none border border-slate-200/90 shadow-lg overflow-hidden">
           {/* Top Wide Banner Image with Overlay Caption */}
           <div className="relative h-72 sm:h-96 lg:h-[420px] bg-emerald-950 overflow-hidden">
@@ -144,7 +144,7 @@ export default function ProjectsPage({
       </section>
 
       {/* Full Directory of School Plans & SIP Projects */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <SectionHeading
           eyebrow="SCHOOL IMPROVEMENT PLAN (SIP) PORTFOLIO"
           title="Ongoing School Plans &"

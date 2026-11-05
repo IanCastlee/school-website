@@ -75,7 +75,7 @@ export default function TransparencyPage({
       )}
 
       {/* Section I (Introduction) & Section II (School Profile) from Screenshot 4 */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* I. Introduction (7 cols) */}
           <div className="lg:col-span-7 bg-white rounded-none p-8 sm:p-10 border border-slate-200/90 shadow-sm flex flex-col justify-between">
@@ -154,7 +154,7 @@ export default function TransparencyPage({
 
       {/* Section III: Financial Standing & MOOE Allocation Breakdown */}
       <section className="bg-emerald-950/5 border-y border-emerald-900/10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="SECTION III • FINANCIAL STANDING & OPERATIONS"
             title="MOOE Fund Allocation &"
@@ -203,7 +203,7 @@ export default function TransparencyPage({
       </section>
 
       {/* Section IV: Public Disclosure Documents */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <SectionHeading
           eyebrow="PUBLIC DISCLOSURE REGISTRY"
           title="Downloadable Reports &"

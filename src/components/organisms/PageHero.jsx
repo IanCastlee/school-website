@@ -54,11 +54,11 @@ export default function PageHero({
         <div className="absolute inset-0 bg-radial from-transparent via-[#0a2316]/20 to-[#0a2316]/80" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 z-10">
+      <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 z-10">
         {variant === "home" ? (
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14">
             {/* Left Column: Institutional Welcome */}
-            <div className="flex-1 text-center lg:text-left max-w-2xl">
+            <div className="flex-1 text-center lg:text-left max-w-3xl">
               {/* Sleek Dual Status Pills */}
               <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/35 text-amber-300 text-[11px] sm:text-xs font-bold tracking-wider uppercase backdrop-blur-md shadow-xs">
@@ -86,7 +86,7 @@ export default function PageHero({
 
               {/* Sub-description with Refined Line Height */}
               {description && (
-                <p className="text-emerald-100/85 text-xs sm:text-sm lg:text-base mt-3 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                <p className="text-emerald-100/85 text-xs sm:text-sm lg:text-base mt-3 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
                   {description}
                 </p>
               )}
@@ -117,7 +117,7 @@ export default function PageHero({
           </div>
         ) : (
           /* Subpage Banner Layout */
-          <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
+          <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
             {eyebrow && (
               <div className="mb-3">
                 <Badge variant="solidGold">{eyebrow}</Badge>
@@ -141,13 +141,13 @@ export default function PageHero({
             )}
 
             {description && (
-              <p className="text-emerald-100/90 text-sm sm:text-base mt-4 max-w-2xl leading-relaxed">
+              <p className="text-emerald-100/90 text-sm sm:text-base mt-4 max-w-3xl leading-relaxed">
                 {description}
               </p>
             )}
 
             {/* Decorative Gold Rule with Laurel Accent */}
-            <div className="w-full max-w-md flex items-center gap-3 mt-7">
+            <div className="w-full max-w-lg flex items-center gap-3 mt-7">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-400/70 to-amber-400" />
               <SchoolSeal size="xs" schoolName={fullName} founded={founded} />
               <div className="h-px flex-1 bg-gradient-to-l from-transparent via-amber-400/70 to-amber-400" />
