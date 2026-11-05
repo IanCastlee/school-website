@@ -17,10 +17,10 @@ export default function StatCard({ label, value, suffix, icon = "Award", descrip
   const IconComponent = iconMap[icon] || Award;
 
   return (
-    <div className="group bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-800/30 transition-all duration-300 relative overflow-hidden">
+    <div className="group bg-white rounded-none p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-800/30 transition-all duration-300 relative overflow-hidden">
       <div className="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-emerald-900/5 group-hover:bg-emerald-900/10 transition-colors" />
       <div className="flex items-start justify-between gap-4 mb-4">
-        <div className="w-12 h-12 rounded-xl bg-emerald-950/5 border border-emerald-900/15 flex items-center justify-center text-[#1B4332] group-hover:bg-[#1B4332] group-hover:text-amber-400 transition-colors">
+        <div className="w-12 h-12 rounded-none bg-emerald-950/5 border border-emerald-900/15 flex items-center justify-center text-[#1B4332] group-hover:bg-[#1B4332] group-hover:text-amber-400 transition-colors">
           <IconComponent className="w-6 h-6" />
         </div>
         {suffix && (

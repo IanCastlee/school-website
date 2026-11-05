@@ -22,14 +22,14 @@ export default function SearchInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         autoFocus={autoFocus}
-        className="w-full pl-10 pr-9 py-2 text-sm bg-white border border-slate-200 rounded-xl text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1B4332] focus:border-transparent transition-all"
+        className="w-full pl-10 pr-9 py-2 text-sm bg-white border border-slate-200 rounded-none text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1B4332] focus:border-transparent transition-all"
       />
       {value && (
         <button
           type="button"
           onClick={onClear}
           aria-label="Clear search"
-          className="absolute right-2.5 p-1 text-slate-400 hover:text-slate-600 rounded-lg cursor-pointer"
+          className="absolute right-2.5 p-1 text-slate-400 hover:text-slate-600 rounded-none cursor-pointer"
         >
           <X className="w-3.5 h-3.5" />
         </button>

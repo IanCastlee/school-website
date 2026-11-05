@@ -35,7 +35,7 @@ export default function AccomplishmentsPage({
 
       {/* Exact Introductory Narrative from Screenshot 2 with Watermark Seal */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-        <div className="relative bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-md overflow-hidden">
+        <div className="relative bg-white rounded-none p-8 sm:p-12 border border-slate-200/90 shadow-md overflow-hidden">
           {/* Subtle Watermark Seal in center-right like Screenshot 2 */}
           <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-[0.06] pointer-events-none">
             <SchoolSeal size="xl" showWreath={true} />
@@ -61,8 +61,8 @@ export default function AccomplishmentsPage({
 
             {/* Three Highlight Badges matching the 3 areas mentioned in the text */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-100">
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60">
-                <div className="w-10 h-10 rounded-xl bg-[#1B4332] text-amber-400 flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 p-3.5 rounded-none bg-emerald-50/70 border border-emerald-200/60">
+                <div className="w-10 h-10 rounded-none bg-[#1B4332] text-amber-400 flex items-center justify-center shrink-0">
                   <Trophy className="w-5 h-5" />
                 </div>
                 <div>
@@ -75,8 +75,8 @@ export default function AccomplishmentsPage({
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200/60">
-                <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 p-3.5 rounded-none bg-amber-50/70 border border-amber-200/60">
+                <div className="w-10 h-10 rounded-none bg-amber-500 text-slate-950 flex items-center justify-center shrink-0">
                   <Medal className="w-5 h-5" />
                 </div>
                 <div>
@@ -89,8 +89,8 @@ export default function AccomplishmentsPage({
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200/60">
-                <div className="w-10 h-10 rounded-xl bg-[#1B4332] text-amber-400 flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 p-3.5 rounded-none bg-emerald-50/70 border border-emerald-200/60">
+                <div className="w-10 h-10 rounded-none bg-[#1B4332] text-amber-400 flex items-center justify-center shrink-0">
                   <Music className="w-5 h-5" />
                 </div>
                 <div>
@@ -126,7 +126,7 @@ export default function AccomplishmentsPage({
                   key={cat}
                   type="button"
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                  className={`px-4 py-2 rounded-none text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                     active
                       ? "bg-[#1B4332] text-white shadow-sm"
                       : "bg-white text-slate-700 border border-slate-200 hover:bg-emerald-50"

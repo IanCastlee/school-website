@@ -13,6 +13,14 @@ body {
   letter-spacing: -0.011em;
 }
 
+/* Sharp rectangular styling for buttons and cards */
+button,
+[role="button"],
+.btn,
+article {
+  border-radius: 0px !important;
+}
+
 h1, h2, h3, h4, .font-serif {
   font-family: var(--font-heading);
   letter-spacing: -0.028em;

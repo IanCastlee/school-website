@@ -47,7 +47,7 @@ export default function ProjectsPage({
 
       {/* Spotlight Feature: March 1, 2025 Chemi-Calc Club Tree Planting (Screenshot 3) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-        <div className="bg-white rounded-3xl border border-slate-200/90 shadow-lg overflow-hidden">
+        <div className="bg-white rounded-none border border-slate-200/90 shadow-lg overflow-hidden">
           {/* Top Wide Banner Image with Overlay Caption */}
           <div className="relative h-72 sm:h-96 lg:h-[420px] bg-emerald-950 overflow-hidden">
             <img
@@ -101,7 +101,7 @@ export default function ProjectsPage({
                 {dynamicNarrative}
               </p>
 
-              <div className="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 flex items-start gap-3">
+              <div className="p-4 rounded-none bg-emerald-50/80 border border-emerald-200/80 flex items-start gap-3">
                 <Sparkles className="w-5 h-5 text-[#1B4332] shrink-0 mt-0.5" />
                 <p className="text-xs sm:text-sm text-emerald-950 font-medium leading-relaxed">
                   <strong>Banner Theme:</strong> &ldquo;Planting Trees to Green the Earth — Going Easy Towards a Greener Output&rdquo; demonstrates how Senior High School Sci-Tech learners unite scientific inquiry with grassroots ecological care.
@@ -110,7 +110,7 @@ export default function ProjectsPage({
             </div>
 
             {/* Right Key Objectives Box (5 cols) */}
-            <div className="lg:col-span-5 bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-slate-50 rounded-none p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-between">
               <div>
                 <span className="text-xs font-extrabold uppercase tracking-wider text-[#1B4332]">
                   Key Program Objectives

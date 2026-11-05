@@ -68,14 +68,14 @@ export default function Footer({ activeTab, onSelectTab, schoolInfo = defaultSch
             <button
               type="button"
               onClick={() => handleNav("contact")}
-              className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm transition-colors cursor-pointer shadow-md"
+              className="px-5 py-2.5 rounded-none bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm transition-colors cursor-pointer shadow-md"
             >
               Contact Inquiry Desk
             </button>
             <button
               type="button"
               onClick={() => handleNav("transparency")}
-              className="px-5 py-2.5 rounded-xl bg-emerald-900/70 hover:bg-emerald-800 text-white border border-emerald-700/60 font-semibold text-sm transition-colors cursor-pointer"
+              className="px-5 py-2.5 rounded-none bg-emerald-900/70 hover:bg-emerald-800 text-white border border-emerald-700/60 font-semibold text-sm transition-colors cursor-pointer"
             >
               Transparency Seal
             </button>
@@ -255,7 +255,7 @@ export default function Footer({ activeTab, onSelectTab, schoolInfo = defaultSch
           <button
             type="button"
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950 hover:bg-emerald-900 text-emerald-200 border border-emerald-800/70 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-emerald-950 hover:bg-emerald-900 text-emerald-200 border border-emerald-800/70 transition-colors cursor-pointer"
           >
             <span>Back to Top</span>
             <ArrowUp className="w-3.5 h-3.5 text-amber-400" />

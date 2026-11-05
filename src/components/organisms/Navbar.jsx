@@ -149,7 +149,7 @@ export default function Navbar({
               type="button"
               onClick={() => setTopRibbonExpanded((prev) => !prev)}
               aria-label="Toggle institutional information"
-              className="sm:hidden inline-flex items-center justify-center p-1 rounded-md text-amber-400 hover:text-white bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-800/60 transition-colors shrink-0 cursor-pointer ml-auto"
+              className="sm:hidden inline-flex items-center justify-center p-1 rounded-none text-amber-400 hover:text-white bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-800/60 transition-colors shrink-0 cursor-pointer ml-auto"
             >
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-200 ${
@@ -220,7 +220,7 @@ export default function Navbar({
 
           {/* Center: Clean Pill Navigation Dock (Desktop) */}
           <nav
-            className="hidden lg:flex items-center bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/70"
+            className="hidden lg:flex items-center bg-slate-100/80 p-1.5 rounded-none border border-slate-200/70"
             aria-label="Main Navigation"
           >
             {navigationLinks.map((link) => {
@@ -230,7 +230,7 @@ export default function Navbar({
                   key={link.id}
                   type="button"
                   onClick={() => handleNavClick(link.id)}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                  className={`px-4 py-2 rounded-none text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-[#1B4332] text-white shadow-sm"
                       : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
@@ -249,7 +249,7 @@ export default function Navbar({
               onClick={() => setSearchOpen((prev) => !prev)}
               aria-label="Search portal"
               title="Search Portal"
-              className={`inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-3.5 py-2.5 rounded-none border text-xs font-semibold transition-all cursor-pointer ${
                 searchOpen
                   ? "bg-[#1B4332] text-white border-[#1B4332]"
                   : "bg-slate-50 hover:bg-emerald-50/70 text-slate-600 hover:text-[#1B4332] border-slate-200/90"
@@ -262,7 +262,7 @@ export default function Navbar({
             <button
               type="button"
               onClick={() => handleNavClick("contact")}
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-xs whitespace-nowrap"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-none bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-xs whitespace-nowrap"
             >
               <span>Inquire</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -272,7 +272,7 @@ export default function Navbar({
               type="button"
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label="Toggle Menu"
-              className="lg:hidden p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50 text-slate-700 border border-slate-200 cursor-pointer"
+              className="lg:hidden p-2.5 rounded-none bg-slate-50 hover:bg-emerald-50 text-slate-700 border border-slate-200 cursor-pointer"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -291,7 +291,7 @@ export default function Navbar({
                 autoFocus
               />
               {searchQuery.trim().length > 0 && (
-                <div className="mt-2 bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden max-h-72 overflow-y-auto">
+                <div className="mt-2 bg-white rounded-none border border-slate-200 shadow-lg overflow-hidden max-h-72 overflow-y-auto">
                   {searchResults.length === 0 ? (
                     <div className="p-4 text-center text-xs text-slate-500">
                       No matching content found for &ldquo;{searchQuery}&rdquo;.
@@ -319,7 +319,7 @@ export default function Navbar({
                               {item.snippet}
                             </div>
                           </div>
-                          <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-lg shrink-0">
+                          <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-none shrink-0">
                             View →
                           </span>
                         </button>
@@ -342,7 +342,7 @@ export default function Navbar({
                   key={link.id}
                   type="button"
                   onClick={() => handleNavClick(link.id)}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer ${
+                  className={`w-full text-left px-4 py-3 rounded-none text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer ${
                     isActive
                       ? "bg-[#1B4332] text-white"
                       : "text-slate-700 hover:bg-emerald-50"

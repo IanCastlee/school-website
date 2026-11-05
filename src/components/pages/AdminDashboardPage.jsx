@@ -643,7 +643,7 @@ export default function AdminDashboardPage({
       <div className="min-h-screen bg-[#0c2217] flex flex-col justify-center items-center px-4 py-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fbbf24_1px,transparent_1px)] [background-size:24px_24px]" />
 
-        <div className="relative z-10 w-full max-w-md bg-white rounded-2xl shadow-2xl border-t-4 border-amber-500 overflow-hidden">
+        <div className="relative z-10 w-full max-w-md bg-white rounded-none shadow-2xl border-t-4 border-amber-500 overflow-hidden">
           <div className="bg-[#112e1f] text-white px-8 py-7 text-center border-b border-emerald-900">
             <div className="inline-flex p-2.5 rounded-full bg-white/10 border border-amber-400/30 mb-3">
               <SchoolSeal size="sm" />
@@ -661,7 +661,7 @@ export default function AdminDashboardPage({
 
           <form onSubmit={handleLogin} className="p-8 space-y-5">
             {loginError && (
-              <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs font-semibold text-red-700 flex items-start gap-2.5">
+              <div className="p-3.5 rounded-none bg-red-50 border border-red-200 text-xs font-semibold text-red-700 flex items-start gap-2.5">
                 <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>{loginError}</span>
               </div>
@@ -676,7 +676,7 @@ export default function AdminDashboardPage({
                 required
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
-                className="w-full px-4 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                className="w-full px-4 py-2.5 text-sm rounded-none border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
               />
             </div>
 
@@ -689,11 +689,11 @@ export default function AdminDashboardPage({
                 required
                 value={loginPassword}
                 onChange={(e) => setLoginPassword(e.target.value)}
-                className="w-full px-4 py-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                className="w-full px-4 py-2.5 text-sm rounded-none border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
               />
             </div>
 
-            <div className="p-3 rounded-lg bg-amber-50/90 border border-amber-200 text-xs text-amber-950 space-y-1">
+            <div className="p-3 rounded-none bg-amber-50/90 border border-amber-200 text-xs text-amber-950 space-y-1">
               <div className="font-bold flex items-center gap-1.5">
                 <KeyRound className="w-3.5 h-3.5 text-amber-700" />
                 Demo Executive Credentials:
@@ -801,7 +801,7 @@ export default function AdminDashboardPage({
             <button
               type="button"
               onClick={() => setMobileDrawerOpen(false)}
-              className="p-2 rounded-lg text-emerald-200 hover:bg-emerald-900 cursor-pointer"
+              className="p-2 rounded-none text-emerald-200 hover:bg-emerald-900 cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -824,7 +824,7 @@ export default function AdminDashboardPage({
                   setActiveSection(item.id);
                   if (isMobile) setMobileDrawerOpen(false);
                 }}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-none text-xs font-semibold transition-all cursor-pointer ${
                   isActive
                     ? "bg-amber-400 text-slate-950 font-bold shadow-sm"
                     : "text-emerald-100/85 hover:bg-emerald-900/60 hover:text-white"
@@ -866,7 +866,7 @@ export default function AdminDashboardPage({
             type="button"
             onClick={handleLogout}
             title="Sign Out"
-            className="p-2 rounded-lg bg-emerald-950 hover:bg-red-900/70 text-emerald-200 hover:text-white transition-colors cursor-pointer"
+            className="p-2 rounded-none bg-emerald-950 hover:bg-red-900/70 text-emerald-200 hover:text-white transition-colors cursor-pointer"
           >
             <LogOut className="w-4 h-4" />
           </button>
@@ -875,7 +875,7 @@ export default function AdminDashboardPage({
         <button
           type="button"
           onClick={onExitAdmin}
-          className="w-full py-2 px-3 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer border border-emerald-700/50"
+          className="w-full py-2 px-3 rounded-none bg-emerald-900/60 hover:bg-emerald-800 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer border border-emerald-700/50"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-amber-400" />
           <span>Back to Public Website</span>
@@ -921,7 +921,7 @@ export default function AdminDashboardPage({
               onClick={handleHeaderSidebarToggle}
               title={sidebarOpen ? "Collapse Sidebar Menu" : "Expand Sidebar Menu"}
               aria-label="Toggle Sidebar Menu"
-              className="p-2.5 rounded-xl bg-slate-100 hover:bg-[#1B4332] text-slate-700 hover:text-amber-300 border border-slate-200 transition-colors cursor-pointer flex items-center justify-center"
+              className="p-2.5 rounded-none bg-slate-100 hover:bg-[#1B4332] text-slate-700 hover:text-amber-300 border border-slate-200 transition-colors cursor-pointer flex items-center justify-center"
             >
               <Menu className="w-5 h-5 lg:hidden" />
               {sidebarOpen ? (
@@ -967,7 +967,7 @@ export default function AdminDashboardPage({
         <div className="flex-1 overflow-y-auto">
           {/* Toast Notification */}
           {bannerNotice && (
-            <div className="mx-6 mt-5 p-4 rounded-xl bg-[#1B4332] text-white border-l-4 border-amber-400 shadow-md flex items-center justify-between">
+            <div className="mx-6 mt-5 p-4 rounded-none bg-[#1B4332] text-white border-l-4 border-amber-400 shadow-md flex items-center justify-between">
               <div className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>{bannerNotice.msg}</span>
@@ -985,7 +985,7 @@ export default function AdminDashboardPage({
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div
                   onClick={() => setActiveSection("accomplishments")}
-                  className="bg-white rounded-xl p-6 border border-slate-200 border-t-4 border-t-[#1B4332] shadow-xs hover:shadow-md transition-all cursor-pointer"
+                  className="bg-white rounded-none p-6 border border-slate-200 border-t-4 border-t-[#1B4332] shadow-xs hover:shadow-md transition-all cursor-pointer"
                 >
                   <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-500">
                     <span>Accomplishments</span>
@@ -1001,7 +1001,7 @@ export default function AdminDashboardPage({
 
                 <div
                   onClick={() => setActiveSection("projects")}
-                  className="bg-white rounded-xl p-6 border border-slate-200 border-t-4 border-t-amber-500 shadow-xs hover:shadow-md transition-all cursor-pointer"
+                  className="bg-white rounded-none p-6 border border-slate-200 border-t-4 border-t-amber-500 shadow-xs hover:shadow-md transition-all cursor-pointer"
                 >
                   <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-500">
                     <span>School Projects</span>
@@ -1017,7 +1017,7 @@ export default function AdminDashboardPage({
 
                 <div
                   onClick={() => setActiveSection("transparency")}
-                  className="bg-white rounded-xl p-6 border border-slate-200 border-t-4 border-t-[#1B4332] shadow-xs hover:shadow-md transition-all cursor-pointer"
+                  className="bg-white rounded-none p-6 border border-slate-200 border-t-4 border-t-[#1B4332] shadow-xs hover:shadow-md transition-all cursor-pointer"
                 >
                   <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-500">
                     <span>Transparency Reports</span>
@@ -1033,7 +1033,7 @@ export default function AdminDashboardPage({
 
                 <div
                   onClick={() => setActiveSection("inquiries")}
-                  className="bg-white rounded-xl p-6 border border-slate-200 border-t-4 border-t-amber-500 shadow-xs hover:shadow-md transition-all cursor-pointer"
+                  className="bg-white rounded-none p-6 border border-slate-200 border-t-4 border-t-amber-500 shadow-xs hover:shadow-md transition-all cursor-pointer"
                 >
                   <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-500">
                     <span>Public Inquiries</span>
@@ -1050,7 +1050,7 @@ export default function AdminDashboardPage({
 
               {/* Recent Inquiries & School Profile Summary */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <div className="lg:col-span-7 bg-white rounded-xl border border-slate-200 p-6 shadow-xs">
+                <div className="lg:col-span-7 bg-white rounded-none border border-slate-200 p-6 shadow-xs">
                   <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
                     <div>
                       <h3 className="text-base font-bold text-slate-900">
@@ -1104,7 +1104,7 @@ export default function AdminDashboardPage({
                   </div>
                 </div>
 
-                <div className="lg:col-span-5 bg-white rounded-xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between">
+                <div className="lg:col-span-5 bg-white rounded-none border border-slate-200 p-6 shadow-xs flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
                       <div>
@@ -1169,7 +1169,7 @@ export default function AdminDashboardPage({
           {activeSection === "accomplishments" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* Left Form: Create or Update Accomplishment (4 cols) */}
-              <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200 p-6 h-fit shadow-xs">
+              <div className="lg:col-span-4 bg-white rounded-none border border-slate-200 p-6 h-fit shadow-xs">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
                   <h3 className="text-xl font-bold text-slate-900 font-serif">
                     {editingAccomplishmentId
@@ -1201,7 +1201,7 @@ export default function AdminDashboardPage({
                           category: e.target.value,
                         })
                       }
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300 bg-white"
                     >
                       <option>Sepak Takraw</option>
                       <option>Boxing</option>
@@ -1225,7 +1225,7 @@ export default function AdminDashboardPage({
                         })
                       }
                       placeholder="e.g. Regional Science Quiz Bee 1st Place"
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300"
                     />
                   </div>
 
@@ -1243,7 +1243,7 @@ export default function AdminDashboardPage({
                         })
                       }
                       placeholder="e.g. Senior High School STEM Division"
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300"
                     />
                   </div>
 
@@ -1261,7 +1261,7 @@ export default function AdminDashboardPage({
                             date: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300"
                       />
                     </div>
                     <div>
@@ -1277,7 +1277,7 @@ export default function AdminDashboardPage({
                             badge: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300"
                       />
                     </div>
                   </div>
@@ -1296,7 +1296,7 @@ export default function AdminDashboardPage({
                         })
                       }
                       placeholder="Varsity Team, Coach"
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300"
                     />
                   </div>
 
@@ -1315,7 +1315,7 @@ export default function AdminDashboardPage({
                         })
                       }
                       placeholder="Describe the victory and significance..."
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300"
                     />
                   </div>
 
@@ -1334,7 +1334,7 @@ export default function AdminDashboardPage({
               </div>
 
               {/* Right Table: Read, Edit & Delete Accomplishments (8 cols) */}
-              <div className="lg:col-span-8 bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
+              <div className="lg:col-span-8 bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs">
                 <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                   <div>
                     <h3 className="text-base font-bold text-slate-900">
@@ -1384,7 +1384,7 @@ export default function AdminDashboardPage({
                           <button
                             type="button"
                             onClick={() => startEditAccomplishment(item)}
-                            className="p-2 rounded-lg text-slate-600 hover:text-[#1B4332] hover:bg-emerald-50 border border-slate-200 transition-colors cursor-pointer"
+                            className="p-2 rounded-none text-slate-600 hover:text-[#1B4332] hover:bg-emerald-50 border border-slate-200 transition-colors cursor-pointer"
                             title="Edit Accomplishment"
                           >
                             <Pencil className="w-4 h-4" />
@@ -1392,7 +1392,7 @@ export default function AdminDashboardPage({
                           <button
                             type="button"
                             onClick={() => handleDeleteAccomplishment(item.id)}
-                            className="p-2 rounded-lg text-slate-500 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
+                            className="p-2 rounded-none text-slate-500 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
                             title="Delete Accomplishment"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -1411,7 +1411,7 @@ export default function AdminDashboardPage({
              ================================================================ */}
           {activeSection === "projects" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200 p-6 h-fit shadow-xs">
+              <div className="lg:col-span-4 bg-white rounded-none border border-slate-200 p-6 h-fit shadow-xs">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
                   <h3 className="text-xl font-bold text-slate-900 font-serif">
                     {editingProjectId
@@ -1443,7 +1443,7 @@ export default function AdminDashboardPage({
                         setProjectForm({ ...projectForm, title: e.target.value })
                       }
                       placeholder="e.g. Solar-Powered Campus Science Lab"
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300"
                     />
                   </div>
 
@@ -1458,7 +1458,7 @@ export default function AdminDashboardPage({
                         onChange={(e) =>
                           setProjectForm({ ...projectForm, category: e.target.value })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300"
                       />
                     </div>
                     <div>
@@ -1470,7 +1470,7 @@ export default function AdminDashboardPage({
                         onChange={(e) =>
                           setProjectForm({ ...projectForm, status: e.target.value })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300 bg-white"
                       >
                         <option>Planned</option>
                         <option>In Progress</option>
@@ -1511,7 +1511,7 @@ export default function AdminDashboardPage({
                         onChange={(e) =>
                           setProjectForm({ ...projectForm, lead: e.target.value })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300"
                       />
                     </div>
                     <div>
@@ -1525,7 +1525,7 @@ export default function AdminDashboardPage({
                           setProjectForm({ ...projectForm, impact: e.target.value })
                         }
                         placeholder="e.g. 500+ Learners Benefited"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300"
                       />
                     </div>
                   </div>
@@ -1541,7 +1541,7 @@ export default function AdminDashboardPage({
                       onChange={(e) =>
                         setProjectForm({ ...projectForm, description: e.target.value })
                       }
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300"
                     />
                   </div>
 
@@ -1557,7 +1557,7 @@ export default function AdminDashboardPage({
                 </form>
               </div>
 
-              <div className="lg:col-span-8 bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
+              <div className="lg:col-span-8 bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs">
                 <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                   <div>
                     <h3 className="text-base font-bold text-slate-900">
@@ -1603,7 +1603,7 @@ export default function AdminDashboardPage({
                           <button
                             type="button"
                             onClick={() => startEditProject(proj)}
-                            className="p-2 rounded-lg text-slate-600 hover:text-[#1B4332] hover:bg-emerald-50 border border-slate-200 transition-colors cursor-pointer"
+                            className="p-2 rounded-none text-slate-600 hover:text-[#1B4332] hover:bg-emerald-50 border border-slate-200 transition-colors cursor-pointer"
                             title="Edit Project"
                           >
                             <Pencil className="w-4 h-4" />
@@ -1611,7 +1611,7 @@ export default function AdminDashboardPage({
                           <button
                             type="button"
                             onClick={() => handleDeleteProject(proj.id)}
-                            className="p-2 rounded-lg text-slate-500 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
+                            className="p-2 rounded-none text-slate-500 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
                             title="Delete Project"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -1630,7 +1630,7 @@ export default function AdminDashboardPage({
              ================================================================ */}
           {activeSection === "transparency" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200 p-6 h-fit shadow-xs">
+              <div className="lg:col-span-4 bg-white rounded-none border border-slate-200 p-6 h-fit shadow-xs">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
                   <h3 className="text-xl font-bold text-slate-900 font-serif">
                     {editingDocId
@@ -1660,7 +1660,7 @@ export default function AdminDashboardPage({
                         required
                         value={docForm.code}
                         onChange={(e) => setDocForm({ ...docForm, code: e.target.value })}
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300 font-mono"
                       />
                     </div>
                     <div>
@@ -1672,7 +1672,7 @@ export default function AdminDashboardPage({
                         onChange={(e) =>
                           setDocForm({ ...docForm, category: e.target.value })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300 bg-white"
                       >
                         <option>Annual Report</option>
                         <option>Financial Statement</option>
@@ -1692,7 +1692,7 @@ export default function AdminDashboardPage({
                       value={docForm.title}
                       onChange={(e) => setDocForm({ ...docForm, title: e.target.value })}
                       placeholder="e.g. MOOE Liquidation Report Q1 2025"
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3 py-2 rounded-none border border-slate-300"
                     />
                   </div>
 
@@ -1707,7 +1707,7 @@ export default function AdminDashboardPage({
                         onChange={(e) =>
                           setDocForm({ ...docForm, datePublished: e.target.value })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300"
                       />
                     </div>
                     <div>
@@ -1720,7 +1720,7 @@ export default function AdminDashboardPage({
                         onChange={(e) =>
                           setDocForm({ ...docForm, fileSize: e.target.value })
                         }
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300"
+                        className="w-full px-3 py-2 rounded-none border border-slate-300"
                       />
                     </div>
                   </div>
@@ -1739,7 +1739,7 @@ export default function AdminDashboardPage({
                 </form>
               </div>
 
-              <div className="lg:col-span-8 bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
+              <div className="lg:col-span-8 bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs">
                 <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                   <div>
                     <h3 className="text-base font-bold text-slate-900">
@@ -1784,7 +1784,7 @@ export default function AdminDashboardPage({
                           <button
                             type="button"
                             onClick={() => startEditDoc(doc)}
-                            className="p-2 rounded-lg text-slate-600 hover:text-[#1B4332] hover:bg-emerald-50 border border-slate-200 transition-colors cursor-pointer"
+                            className="p-2 rounded-none text-slate-600 hover:text-[#1B4332] hover:bg-emerald-50 border border-slate-200 transition-colors cursor-pointer"
                             title="Edit Document"
                           >
                             <Pencil className="w-4 h-4" />
@@ -1792,7 +1792,7 @@ export default function AdminDashboardPage({
                           <button
                             type="button"
                             onClick={() => handleDeleteDoc(doc.id)}
-                            className="p-2 rounded-lg text-slate-500 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
+                            className="p-2 rounded-none text-slate-500 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
                             title="Delete Document"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -1810,7 +1810,7 @@ export default function AdminDashboardPage({
               SECTION 5: STAKEHOLDER INQUIRIES INBOX (Read, Status Update, Delete)
              ================================================================ */}
           {activeSection === "inquiries" && (
-            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
+            <div className="bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs">
               <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                 <div>
                   <h3 className="text-base font-bold text-slate-900">
@@ -1886,7 +1886,7 @@ export default function AdminDashboardPage({
                       <button
                         type="button"
                         onClick={() => handleDeleteInquiry(inq.id)}
-                        className="p-2 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
+                        className="p-2 rounded-none text-slate-400 hover:text-red-600 hover:bg-red-50 border border-slate-200 transition-colors cursor-pointer"
                         title="Delete Inquiry"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -1902,7 +1902,7 @@ export default function AdminDashboardPage({
               SECTION 6: WHITE-LABEL SCHOOL BRANDING CONFIGURATOR
              ================================================================ */}
           {activeSection === "settings" && (
-            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden max-w-4xl shadow-xs">
+            <div className="bg-white rounded-none border border-slate-200 overflow-hidden max-w-4xl shadow-xs">
               <div className="px-6 py-4 bg-[#112e1f] text-white flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-bold font-serif">
@@ -1947,7 +1947,7 @@ export default function AdminDashboardPage({
                             : settingsForm.shortName,
                         });
                       }}
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm font-bold text-slate-900"
+                      className="w-full px-3.5 py-2.5 rounded-none border border-slate-300 text-sm font-bold text-slate-900"
                     />
                   </div>
 
@@ -1961,7 +1961,7 @@ export default function AdminDashboardPage({
                       onChange={(e) =>
                         setSettingsForm({ ...settingsForm, shortName: e.target.value })
                       }
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm font-bold"
+                      className="w-full px-3.5 py-2.5 rounded-none border border-slate-300 text-sm font-bold"
                     />
                   </div>
                 </div>
@@ -1977,7 +1977,7 @@ export default function AdminDashboardPage({
                       onChange={(e) =>
                         setSettingsForm({ ...settingsForm, schoolId: e.target.value })
                       }
-                      className="w-full px-3.5 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3.5 py-2 rounded-none border border-slate-300"
                     />
                   </div>
                   <div>
@@ -1990,7 +1990,7 @@ export default function AdminDashboardPage({
                       onChange={(e) =>
                         setSettingsForm({ ...settingsForm, founded: e.target.value })
                       }
-                      className="w-full px-3.5 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3.5 py-2 rounded-none border border-slate-300"
                     />
                   </div>
                   <div>
@@ -2006,7 +2006,7 @@ export default function AdminDashboardPage({
                           contactNumber: e.target.value,
                         })
                       }
-                      className="w-full px-3.5 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3.5 py-2 rounded-none border border-slate-300"
                     />
                   </div>
                 </div>
@@ -2022,7 +2022,7 @@ export default function AdminDashboardPage({
                       onChange={(e) =>
                         setSettingsForm({ ...settingsForm, division: e.target.value })
                       }
-                      className="w-full px-3.5 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3.5 py-2 rounded-none border border-slate-300"
                     />
                   </div>
                   <div>
@@ -2035,7 +2035,7 @@ export default function AdminDashboardPage({
                       onChange={(e) =>
                         setSettingsForm({ ...settingsForm, email: e.target.value })
                       }
-                      className="w-full px-3.5 py-2 rounded-lg border border-slate-300"
+                      className="w-full px-3.5 py-2 rounded-none border border-slate-300"
                     />
                   </div>
                 </div>
@@ -2050,7 +2050,7 @@ export default function AdminDashboardPage({
                     onChange={(e) =>
                       setSettingsForm({ ...settingsForm, address: e.target.value })
                     }
-                    className="w-full px-3.5 py-2 rounded-lg border border-slate-300"
+                    className="w-full px-3.5 py-2 rounded-none border border-slate-300"
                   />
                 </div>
 
@@ -2069,7 +2069,7 @@ export default function AdminDashboardPage({
           {activeSection === "engineering" && (
             <div className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between">
+                <div className="bg-white rounded-none border border-slate-200 p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <Badge variant="emerald" icon={Zap}>
@@ -2106,7 +2106,7 @@ export default function AdminDashboardPage({
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between">
+                <div className="bg-white rounded-none border border-slate-200 p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <Badge variant="gold" icon={Activity}>
@@ -2149,7 +2149,7 @@ export default function AdminDashboardPage({
               </div>
 
               {/* MySQL Proper Indexing Registry Table */}
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
+              <div className="bg-white rounded-none border border-slate-200 overflow-hidden shadow-xs">
                 <div className="px-6 py-4 bg-[#112e1f] text-white flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-2.5">
                     <Layers className="w-5 h-5 text-amber-400" />

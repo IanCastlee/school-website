@@ -107,7 +107,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
 
       {/* Interactive Inquiry Form & Campus Location */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="bg-white rounded-3xl border border-slate-200/90 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-white rounded-none border border-slate-200/90 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           {/* Left Column: Online Inquiry & Feedback Form (7 cols) */}
           <div className="lg:col-span-7 p-8 sm:p-12">
             <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#1B4332] bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 mb-3">
@@ -123,7 +123,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
             </p>
 
             {submitted ? (
-              <div className="p-8 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-4">
+              <div className="p-8 rounded-none bg-emerald-50 border border-emerald-200 text-center space-y-4">
                 <div className="w-14 h-14 rounded-full bg-[#1B4332] text-amber-400 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
@@ -154,7 +154,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {submitError && (
-                  <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs font-semibold text-red-700">
+                  <div className="p-3.5 rounded-none bg-red-50 border border-red-200 text-xs font-semibold text-red-700">
                     {submitError}
                   </div>
                 )}
@@ -171,7 +171,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
                         setFormState({ ...formState, fullName: e.target.value })
                       }
                       placeholder="Juan Dela Cruz"
-                      className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                      className="w-full px-4 py-2.5 text-sm rounded-none border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
                     />
                   </div>
 
@@ -187,7 +187,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
                         setFormState({ ...formState, email: e.target.value })
                       }
                       placeholder="you@example.com / 09XX..."
-                      className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                      className="w-full px-4 py-2.5 text-sm rounded-none border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
                     />
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
                       onChange={(e) =>
                         setFormState({ ...formState, role: e.target.value })
                       }
-                      className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                      className="w-full px-4 py-2.5 text-sm rounded-none border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
                     >
                       <option>Student / Learner</option>
                       <option>Parent / Guardian</option>
@@ -224,7 +224,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
                         setFormState({ ...formState, subject: e.target.value })
                       }
                       placeholder="e.g. Enrollment, SF10 Request, Partnership"
-                      className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                      className="w-full px-4 py-2.5 text-sm rounded-none border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
                     />
                   </div>
                 </div>
@@ -241,7 +241,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
                       setFormState({ ...formState, message: e.target.value })
                     }
                     placeholder="Write your complete question or request here..."
-                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                    className="w-full px-4 py-2.5 text-sm rounded-none border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
                   />
                 </div>
 
@@ -270,7 +270,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
               </div>
 
               <div className="space-y-4">
-                <div className="p-4 rounded-2xl bg-white/10 border border-white/15 flex items-start gap-3.5">
+                <div className="p-4 rounded-none bg-white/10 border border-white/15 flex items-start gap-3.5">
                   <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <div className="text-xs font-bold uppercase text-amber-300">
@@ -282,7 +282,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/10 border border-white/15 flex items-start gap-3.5">
+                <div className="p-4 rounded-none bg-white/10 border border-white/15 flex items-start gap-3.5">
                   <Clock className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <div className="text-xs font-bold uppercase text-amber-300">
@@ -297,7 +297,7 @@ export default function ContactPage({ schoolInfo = defaultSchoolInfo }) {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/10 border border-white/15 flex items-start gap-3.5">
+                <div className="p-4 rounded-none bg-white/10 border border-white/15 flex items-start gap-3.5">
                   <ShieldCheck className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <div className="text-xs font-bold uppercase text-amber-300">

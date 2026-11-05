@@ -45,14 +45,14 @@ export default function ContactCard({
   };
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden bg-bnhs-gradient text-white p-6 sm:p-7 shadow-lg border border-emerald-700/40 hover:border-amber-400/60 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+    <div className="group relative rounded-none overflow-hidden bg-bnhs-gradient text-white p-6 sm:p-7 shadow-lg border border-emerald-700/40 hover:border-amber-400/60 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-6">
       {/* Decorative Gold Rule Lines inspired by the original Contact Banner */}
       <div className="absolute top-3 left-6 right-6 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
       <div className="absolute bottom-3 left-6 right-6 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
 
       {/* Left: Official Seal */}
       <div className="shrink-0 relative">
-        <div className="p-2 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 group-hover:scale-105 transition-transform">
+        <div className="p-2 rounded-none bg-white/10 backdrop-blur-sm border border-white/15 group-hover:scale-105 transition-transform">
           <SchoolSeal size="md" schoolName={schoolName} founded={founded} />
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function ContactCard({
             <a
               href={href || "#"}
               onClick={handleClick}
-              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 transition-colors shadow-sm"
+              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded-none bg-amber-400 hover:bg-amber-300 text-slate-950 transition-colors shadow-sm"
             >
               <span>{actionText}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

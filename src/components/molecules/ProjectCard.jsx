@@ -17,7 +17,7 @@ export default function ProjectCard({
   impact,
 }) {
   return (
-    <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-emerald-800/30 transition-all duration-300 flex flex-col justify-between gap-5">
+    <div className="bg-white rounded-none p-6 border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-emerald-800/30 transition-all duration-300 flex flex-col justify-between gap-5">
       <div>
         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
           <Badge variant="emerald">{category}</Badge>
@@ -61,7 +61,7 @@ export default function ProjectCard({
         </div>
 
         {impact && (
-          <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-amber-50/70 border border-amber-200/60 text-xs font-semibold text-amber-900">
+          <div className="flex items-center gap-2 px-3 py-2 rounded-none bg-amber-50/70 border border-amber-200/60 text-xs font-semibold text-amber-900">
             <Sparkles className="w-4 h-4 text-amber-600 shrink-0" />
             <span>Key Output: {impact}</span>
           </div>

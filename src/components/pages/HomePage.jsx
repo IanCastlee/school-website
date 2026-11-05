@@ -74,7 +74,7 @@ export default function HomePage({
 
       {/* Welcome to Bulusan National High School — Exact Text from Screenshot 1 in Editorial Layout */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <div className="bg-white rounded-3xl border border-slate-200/90 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-white rounded-none border border-slate-200/90 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           {/* Left Editorial Content (7 cols) */}
           <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
             <Badge variant="emerald" icon={Sparkles} className="w-fit mb-4">
@@ -161,7 +161,7 @@ export default function HomePage({
               ].map((pillar, index) => (
                 <div
                   key={index}
-                  className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-start gap-3"
+                  className="p-3.5 rounded-none bg-white/10 backdrop-blur-sm border border-white/15 flex items-start gap-3"
                 >
                   <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
@@ -195,10 +195,10 @@ export default function HomePage({
             {academicTracks.map((track) => (
               <div
                 key={track.id}
-                className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-emerald-800/30 transition-all flex flex-col justify-between"
+                className="bg-white rounded-none p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-emerald-800/30 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-xl bg-emerald-900/10 text-[#1B4332] flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded-none bg-emerald-900/10 text-[#1B4332] flex items-center justify-center mb-4">
                     <BookOpen className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-extrabold uppercase tracking-wider text-amber-700">
@@ -254,7 +254,7 @@ export default function HomePage({
         </div>
 
         {/* Highlight Banner for School Plans / Chemi-Calc Tree Planting */}
-        <div className="mt-10 rounded-3xl bg-bnhs-gradient text-white p-8 sm:p-10 shadow-xl border border-emerald-700/40 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="mt-10 rounded-none bg-bnhs-gradient text-white p-8 sm:p-10 shadow-xl border border-emerald-700/40 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2">
               <Badge variant="solidGold" icon={TreePine}>

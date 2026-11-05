@@ -18,7 +18,7 @@ export default function AchievementCard({
   metrics = [],
 }) {
   return (
-    <article className="group bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:border-emerald-800/35 transition-all duration-300 flex flex-col">
+    <article className="group bg-white rounded-none border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:border-emerald-800/35 transition-all duration-300 flex flex-col">
       {/* Image Header */}
       <div className="relative h-56 overflow-hidden bg-emerald-950">
         <img
@@ -72,7 +72,7 @@ export default function AchievementCard({
               {metrics.map((metric, idx) => (
                 <span
                   key={idx}
-                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-50 text-[#1B4332] border border-emerald-200/60"
+                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-none bg-emerald-50 text-[#1B4332] border border-emerald-200/60"
                 >
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                   {metric}

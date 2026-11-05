@@ -68,7 +68,7 @@ export default function TransparencyPage({
 
       {/* Toast Notification for Document Preview */}
       {downloadToast && (
-        <div className="fixed bottom-6 right-6 z-50 max-w-md bg-[#1B4332] text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-amber-400/50 flex items-center gap-3">
+        <div className="fixed bottom-6 right-6 z-50 max-w-md bg-[#1B4332] text-white px-5 py-3.5 rounded-none shadow-2xl border border-amber-400/50 flex items-center gap-3">
           <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" />
           <span className="text-xs sm:text-sm font-medium">{downloadToast}</span>
         </div>
@@ -78,7 +78,7 @@ export default function TransparencyPage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* I. Introduction (7 cols) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white rounded-none p-8 sm:p-10 border border-slate-200/90 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <Badge variant="emerald" icon={ShieldCheck}>
@@ -99,7 +99,7 @@ export default function TransparencyPage({
             </div>
 
             <div className="mt-8 pt-6 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/60">
+              <div className="p-4 rounded-none bg-emerald-50/70 border border-emerald-200/60">
                 <div className="text-xs font-bold text-emerald-800 uppercase">
                   Annual MOOE Budget
                 </div>
@@ -107,7 +107,7 @@ export default function TransparencyPage({
                   {dynamicTotalMOOE}
                 </div>
               </div>
-              <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/60">
+              <div className="p-4 rounded-none bg-emerald-50/70 border border-emerald-200/60">
                 <div className="text-xs font-bold text-emerald-800 uppercase">
                   Utilization Rate
                 </div>
@@ -115,7 +115,7 @@ export default function TransparencyPage({
                   {dynamicUtilizationRate}
                 </div>
               </div>
-              <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/70">
+              <div className="p-4 rounded-none bg-amber-50/80 border border-amber-200/70">
                 <div className="text-xs font-bold text-amber-900 uppercase">
                   Audit Standing
                 </div>
@@ -127,7 +127,7 @@ export default function TransparencyPage({
           </div>
 
           {/* II. School Profile (5 cols) */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm">
+          <div className="lg:col-span-5 bg-white rounded-none p-8 sm:p-10 border border-slate-200/90 shadow-sm">
             <Badge variant="gold" icon={Building2} className="mb-4">
               SECTION II • SCHOOL PROFILE
             </Badge>
@@ -167,7 +167,7 @@ export default function TransparencyPage({
             {transparencyData.financialSummary.allocations.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm"
+                className="bg-white rounded-none p-6 border border-slate-200/90 shadow-sm"
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div>
